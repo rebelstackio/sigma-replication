@@ -1,0 +1,25 @@
+#Separated out to be passed to the instance for use in provisioning
+#Put any variable you want access to on the provisioned machine here.
+
+# Edit the following to change the name of the database user that will be created:
+PGPORT=5433
+PGPOOLPORT=5432
+PGUSER=pguser
+PGPASSWORD=pgpassword
+PGDATABASE=testdb
+PGVERSION=9.5
+
+PG_REPUSER=replication
+PG_REPPASS=reppassword
+
+PG_SUPERPASS=superduper
+
+# IPs needed here for setting up replication
+#EXTERNAL
+EXT_IP_BASE=172.16.1.1
+HS_EXT_IP_BASE=172.16.33.1
+EXT_NETMASK=255.255.224.0
+#BUS
+BUS_IP_BASE=172.17.1.1
+HS_BUS_IP_BASE=172.17.33.1
+BUS_NETMASK=255.255.0.0

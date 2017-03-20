@@ -1,0 +1,4 @@
+.vagrant
+vagrant/files/ssh/
+vagrant/tmp/
+*.retry
