@@ -54,7 +54,7 @@ $ ./files/ssh_config.sh
 
 *PLEASE NOTE* If you subsequently add more VMs you will need to re-run the [`ssh_config.sh`](files/ssh_config.sh) script edited for all hosts that are required to communicate over ssh.
 
-## Testing failover
+## Testing replication
 First you should provision the two base boxes as shown above:
 
 ```sh
