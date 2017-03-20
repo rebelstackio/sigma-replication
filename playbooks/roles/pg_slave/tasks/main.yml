@@ -1,0 +1,21 @@
+---
+- name: Copy templates to hosts.
+  template:
+    src: "{{ item.s }}"
+    dest: "{{ item.d }}"
+    owner: postgres
+    group: postgres
+    mode: "{{ item.m }}"
+  with_items:
+    - s: clusterips
+      d: '/etc/postgresql/{{ PGVERSION }}/main/'
+      m: '0640'
+  tags:
+    - pg-slave-config
+
+- name: Execute the initiate_replication script
+  command: bash /etc/postgresql/{{ PGVERSION }}/main/replscripts/initiate_replication.sh
+  become: true
+  become_user: postgres
+  tags:
+    - pg-slave-config

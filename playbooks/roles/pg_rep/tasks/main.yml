@@ -1,0 +1,26 @@
+---
+- name: Ensures /etc/postgresql/{{ PGVERSION }}/main/repltemplates dir exists
+  file:
+    path: /etc/postgresql/{{ PGVERSION }}/main/repltemplates
+    owner: postgres
+    group: postgres
+    recurse: yes
+    state: directory
+- name: Ensures /etc/postgresql/{{ PGVERSION }}/main/replscripts dir exists
+  file:
+    path: /etc/postgresql/{{ PGVERSION }}/main/replscripts
+    owner: postgres
+    group: postgres
+    recurse: yes
+    state: directory
+
+- name: Copy configuration files and failover scripts to hosts.
+  template:
+    src: "{{ item.s }}"
+    dest: "{{ item.d }}"
+    owner: postgres
+    group: postgres
+    mode: "{{ item.m }}"
+  with_items: "{{ pg_rep_template_files }}"
+  tags:
+    - pg-rep-config

@@ -1,0 +1,4 @@
+---
+host_vars_name: sig-rdbms-junta.test
+host_vars_ip: 192.168.157.10
+host_vars_other_ip: 172.31.0.2

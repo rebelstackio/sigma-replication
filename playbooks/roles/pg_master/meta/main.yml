@@ -1,0 +1,3 @@
+---
+dependencies:
+  - role: pg_rep_common

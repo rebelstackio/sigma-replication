@@ -1,0 +1,4 @@
+---
+- hosts: replication-servers
+  roles:
+    - { role: pg_pool, become: yes }

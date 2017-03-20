@@ -1,0 +1,18 @@
+---
+PGPORT: 5433
+# PGPOOLPORT is set in pg_pool/vars/main.yml
+#PGPOOLPORT: 5432
+PGUSER: pguser
+PGPASSWORD: pgpassword
+PGDATABASE: testdb
+PGVERSION: 9.5
+
+PG_REPUSER: replication
+PG_REPPASS: reppassword
+
+PG_SUPERPASS: superduper
+
+sig_rdbms_com_ip: 192.168.157.10
+sig_rdbms_junta_ip: 192.168.157.20
+
+primary_slot_name: ly_rdbms02
